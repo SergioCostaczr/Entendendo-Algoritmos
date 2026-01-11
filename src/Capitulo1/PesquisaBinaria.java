@@ -1,6 +1,6 @@
-package PesquisaBinaria;
+package Capitulo1;
 
-public class Test {
+public class PesquisaBinaria {
     public static void main(String[] args) {
         System.out.println(pesquisaBinaria(new int[]{1,3,4,9}, 7));
         System.out.println(operacoes);
