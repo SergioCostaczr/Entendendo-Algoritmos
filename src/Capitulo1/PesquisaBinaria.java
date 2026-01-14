@@ -2,7 +2,7 @@ package Capitulo1;
 
 public class PesquisaBinaria {
     public static void main(String[] args) {
-        System.out.println(pesquisaBinaria(new int[]{1,3,4,9}, 7));
+        System.out.println(pesquisaBinaria(new int[]{1,3,4,9}, 3));
         System.out.println(operacoes);
     }
 
@@ -14,7 +14,7 @@ public class PesquisaBinaria {
         int baixo = 0;
         while (baixo <= alto){
             operacoes++;
-            int meio = (baixo + alto) / 2;
+            int meio = baixo + (alto - baixo) / 2;
             int chute = list[meio];
             if (chute == item){
                 return meio;
@@ -25,7 +25,6 @@ public class PesquisaBinaria {
             else {
                 baixo = meio + 1;
             }
-
         }
         return -1;
     }

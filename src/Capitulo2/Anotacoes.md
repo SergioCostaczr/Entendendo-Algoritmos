@@ -20,6 +20,24 @@
 - **Vantagem**: inserções e remoções rápidas, sem desperdício de memória
 - **Desvantagem**: leitura lenta, sem acesso aleatório, usa memória extra para armazenar referências
 
+**Discursão sobre Melhores e Piores cenários:**
+
+### Read 
+- Melhor: O(1) Muito comum acessar Head ou Tail (Se for umaDouble LinkedList teremos ponteiros para ambos).
+- Pior: O(n) Se quisermos acessar um elemento no meio dela teremos que percorrê-la
+
+### Insert
+- Melhor: O(1) Bastante comum Insert no início ou fim, como já temos a referência o tempo é constante.
+- Pior: O(n) Se quisermos inserir no meio, teremos que percorrê-la para encontrar a referência, caso não a tenhamos. O tempo para encontrar será read(O(n)), o tempo de inserção a partir do momento que temos a referência é O(1).
+
+Então é O(n) ou O(1)? o look up para encontrar a referência é O(n), porem se já tivermos ela é O(1), acho valido considerar como O(n).
+
+### Delete
+- Melhor: O(1) Igual no Insert.
+- Pior: O(n) Mesma discussão do insert, se tivermos a referencia é simples, caso nao a tenhamos entao sera O(n) porque precisamos fazer o lookup(read).
+
+(Sim, em big O falamos do pior caso, mas como são casos de uso MUITO comum para uma LinkedList é valido entendê-los)
+
 ## Quando usar cada uma?
 
 - **Arrays**: quando precisa de muitas leituras e poucas inserções
